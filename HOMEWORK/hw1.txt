@@ -1,0 +1,129 @@
+# ----------------------------------------------------------
+# Please answer these questions after having completed the 
+# entire assignment.
+# ----------------------------------------------------------
+# Name:  Leo Ascenzi
+# Hours spent in total: 3
+# Collaborators and sources:
+#   (List any collaborators or sources here.  Consult
+#    the syllabus for the policy on collaboration.)
+# Feedback: What was the hardest part of this assignment?
+#   (The hardest part was continuing to figure out how to make the pictobot move through the maze even when frustrated. After thinking about the my goal for a while, and taking a break, I was able to complete it easily)
+# Feedback: Any suggestions for improving the assignment?	
+#   (Write your answer here.)
+# ----------------------------------------------------------
+
+
+# ----------------------------------------------------------
+# --------               EMPTY ROOM                ---------
+# ----------------------------------------------------------
+# paste your rules for the empty room in the space below
+
+# Picobot starts in state 0.
+
+# state 0 adjusts pictobot to south east corner
+0 *x** -> E 0   
+0 *E*x -> S 0   
+0 *E*S -> X 1   
+
+# and state 1 goes N as far as possible
+1 x*** -> N 1   
+1 N*** -> X 3   
+
+# and state 2 goes S as far as possible
+2 ***x -> S 2   
+2 ***S -> X 1   
+
+
+# and state 3 goes west 1 then switches to oscillating pattern
+3 N*** -> W 2  
+
+
+
+# ----------------------------------------------------------
+# --------                MAZE ROOM                ---------
+# ----------------------------------------------------------
+# paste your rules for the maze room in the space below
+
+# All states follow right hand rule
+
+# State 0 is a moving North mode
+0 xE** -> N 0 
+0 NExx -> W 3 
+0 NxWx -> E 2 
+0 Nxxx -> E 2 
+0 NEWx -> S 1 
+0 xxxx -> E 2 
+0 xxWx -> E 2 
+
+# State 1 is a moving South mode
+1 **Wx -> S 1 
+1 *xWS -> E 2 
+1 xExS -> W 3 
+1 xExx -> W 3 
+1 xEWS -> N 0 
+1 xxxx -> W 3 
+1 xxxS -> W 3 
+
+# State 2 is a moving East mode
+2 *x*S -> E 2 
+2 xE*S -> N 0 
+2 NExS -> W 3 
+2 NExx -> S 1 
+2 xExx -> S 1 
+2 Nxxx -> S 1 
+2 xxxx -> S 1 
+
+# State 3 is a moving West mode
+3 N*x* -> W 3 
+3 NxWS -> E 2 
+3 N*Wx -> S 1 
+3 xxWS -> N 0 
+3 xxxx -> N 0 
+3 xxWx -> N 0 
+3 xxxS -> N 0 
+
+# ----------------------------------------------------------
+# --------             CHALLENGE ROOM              ---------
+# ----------------------------------------------------------
+# paste your rules for the challenge room in the space below
+
+# state 0 adjusts pictobot to south east corner no matter where it spawns
+0 NEWx -> S 0   
+0 xEWS -> N 0  
+0 NxWS -> E 0   
+0 xxWS -> E 0   
+0 *x*x -> E 0   
+0 NExx -> S 0   
+0 xExS -> N 0
+0 NExS -> X 1   
+
+# and state 1 goes N as far as possible
+1 x*** -> N 1   
+1 N*** -> X 3  
+
+# and state 2 goes S as far as possible
+2 ***x -> S 2   
+2 ***S -> X 1   
+
+# and state 3 goes west 1 then switches to oscillating pattern and breaks the halves
+3 N*x* -> W 2   
+3 NEWx -> S 4   
+
+#-------Above is first NS oscillating pattern, below is second------
+# state 4 alignes to the left corner
+4 xxxx -> W 4   
+4 NxWx -> S 4   
+4 NxWS -> E 5   
+
+# state 5 helps with the second NS oscillating
+5 xxxx -> S 5   
+5 **WS -> X 6  
+
+# state 6 helps with the second NS oscillating
+6 xxxx -> N 6 
+6 xxWS -> N 6  
+6 NxWx -> X 7  
+
+# state 7 moves the bot to the east, then goes back to oscillating
+7 NxWx -> E 5   
