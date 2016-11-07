@@ -1,0 +1,46 @@
+#Leo Ascenzi
+
+1. (3, 4, 5)
+Prediction:
+"Would you eat them in a box?"
+"Done!" 
+
+Actual:
+Would you eat them in a box?
+Done!
+
+2. (3, 3, 3)
+Prediction:
+"Would you eat them with a fox?"
+"Done!"
+
+Actual:
+Would you eat them with a fox?
+Done!
+
+3. (5, -4, 3)
+Prediction:
+"I hate Green Eggs and Ham!"
+
+Actual:
+"I hate Green Eggs and Ham!"
+
+4. (3, 0, 6)
+Prediction:
+"I hate Green Eggs and Ham!"
+
+
+Actual:
+"I hate Green Eggs and Ham!"
+
+5. (3, 6, 1)
+Prediction:
+"I would eat them "
+"here!"
+
+Actual:
+I would eat them 
+here!
+
+
+No differences occured
